@@ -1,0 +1,63 @@
+﻿@model IEnumerable<moreMVC.Models.Employee>
+
+@{
+    ViewBag.Title = "Employees";
+}
+
+<h2>Swagtastic Employee Roster</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.DeptName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.DeptName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployeeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeId })
+        </td>
+    </tr>
+}
+
+</table>
